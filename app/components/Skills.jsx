@@ -1,52 +1,45 @@
 "use client"
 
 import { Code } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
+import { portfolioConfig } from '../config/portfolio';
 
 export default function Skills() {
-  const skills = [
-    { 
-      category: "Frontend", 
-      items: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Vue.js", level: 75 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "TypeScript", level: 80 }
-      ] 
-    },
-    { 
-      category: "Backend", 
-      items: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 82 },
-        { name: "Express", level: 85 },
-        { name: "Django", level: 78 },
-        { name: "PostgreSQL", level: 80 }
-      ] 
-    },
-    { 
-      category: "Tools", 
-      items: [
-        { name: "Git", level: 92 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Figma", level: 85 },
-        { name: "Jest", level: 80 }
-      ] 
-    },
-    { 
-      category: "Soft Skills", 
-      items: [
-        { name: "Problem Solving", level: 95 },
-        { name: "Team Leadership", level: 88 },
-        { name: "Agile", level: 90 },
-        { name: "Communication", level: 92 }
-      ] 
+  const [animate, setAnimate] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimate(true);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 20% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-  ];
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const skills = portfolioConfig.skills;
+
+  console.log('Portfolio Config:', portfolioConfig);
+  console.log('Skills:', skills);
 
   return (
-    <section id="skills" className="py-20 px-6 bg-black/20">
+    <section ref={sectionRef} id="skills" className="py-20 px-6 bg-black/20">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           Skills & Expertise
@@ -68,19 +61,22 @@ export default function Skills() {
                     </div>
                     <div className="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
                       <div 
-                        className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative overflow-hidden"
+                        className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative overflow-hidden transition-all duration-[1500ms] ease-out"
                         style={{ 
-                          width: `${item.level}%`,
-                          animation: 'fillBar 1.5s ease-out forwards'
+                          width: animate ? `${item.level}%` : '0%',
+                          transitionDelay: `${itemIdx * 100}ms`
                         }}
                       >
+                        {/* Diagonal stripes - download effect */}
                         <div 
-                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                          className="absolute inset-0 animate-download-stripes opacity-20"
                           style={{
-                            animation: 'shimmer 2s infinite',
-                            animationDelay: `${itemIdx * 0.2}s`
+                            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.4) 8px, rgba(255,255,255,0.4) 16px)'
                           }}
                         ></div>
+                        
+                        {/* Shimmer overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer"></div>
                       </div>
                     </div>
                   </li>
@@ -92,15 +88,6 @@ export default function Skills() {
       </div>
 
       <style jsx>{`
-        @keyframes fillBar {
-          from {
-            width: 0%;
-          }
-          to {
-            width: var(--target-width);
-          }
-        }
-
         @keyframes shimmer {
           0% {
             transform: translateX(-100%);
@@ -108,6 +95,23 @@ export default function Skills() {
           100% {
             transform: translateX(100%);
           }
+        }
+
+        @keyframes download-stripes {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 40px 0;
+          }
+        }
+
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+
+        .animate-download-stripes {
+          animation: download-stripes 1s linear infinite;
         }
       `}</style>
     </section>

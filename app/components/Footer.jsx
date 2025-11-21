@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Facebook, Instagram, Send } from 'lucide-react';
 import { useState } from 'react';
+import { portfolioConfig } from '../config/portfolio';
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -187,7 +188,7 @@ export default function Footer() {
         <div className="pt-6 border-t border-purple-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-gray-400 text-xs">
-              © 2024 John Doe. All rights reserved.
+              {portfolioConfig.copyright}
             </p>
             <div className="flex space-x-4 text-xs">
               <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">

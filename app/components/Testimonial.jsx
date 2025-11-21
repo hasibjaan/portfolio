@@ -1,26 +1,10 @@
 "use client"
 
+import { Star, MessageSquare } from 'lucide-react';
+import { portfolioConfig } from '../config/portfolio';
+
 export default function Testimonial() {
-    const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
-      content: "Exceptional work quality and professional attitude. Delivered our project ahead of schedule with outstanding results.",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "Product Manager, InnovateCo",
-      content: "Brilliant problem solver with excellent communication skills. A true asset to any development team.",
-      rating: 5
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "CTO, DataFlow Systems",
-      content: "Technical expertise combined with creativity. Transformed our vision into reality beyond expectations.",
-      rating: 5
-    }
-    ];
+    const testimonials = portfolioConfig.testimonials;
 
     return (
       <section id="testimonials" className="py-20 px-6 bg-black/20">

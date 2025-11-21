@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Testimonial from './components/Testimonial';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -27,6 +28,8 @@ export default function Portfolio() {
       <Skills />
 
       <Achievements />
+
+      <Testimonial />
 
       <Contact />
 

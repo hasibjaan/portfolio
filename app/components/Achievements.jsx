@@ -1,25 +1,10 @@
 "use client"
 
 import { Award } from 'lucide-react';
+import { portfolioConfig } from '../config/portfolio';
 
 export default function Achievements() {
-    const achievements = [
-    {
-      title: "Best Developer Award 2024",
-      organization: "Tech Innovation Summit",
-      description: "Recognized for outstanding contribution to open-source projects"
-    },
-    {
-      title: "Hackathon Winner",
-      organization: "Global Code Challenge",
-      description: "First place in international coding competition with 500+ participants"
-    },
-    {
-      title: "Published Author",
-      organization: "Dev.to Platform",
-      description: "50+ technical articles with over 100K reads"
-    }
-    ];
+    const achievements = portfolioConfig.achievements;
 
     return (
          <section id="achievements" className="py-20 px-6">
