@@ -1,14 +1,14 @@
 <!-- Banner Image -->
 <p align="center">
-  <img src="/mnt/data/A_digital_graphic_design_of_a_portfolio_website_di.png" alt="Portfolio Banner" width="100%" />
+  <img src="/mnt/data/portfolio_website_banner.png" alt="Portfolio Banner" width="100%" />
 </p>
 
 # 🚀 My Portfolio Website
 
-A modern, high-performance personal portfolio showcasing my skills, projects, and professional journey.
+### A modern, high-performance personal portfolio showcasing my skills, projects, and professional journey.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js badge" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js badge" /> 
   <img src="https://img.shields.io/badge/Tailwind_CSS-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind badge" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel badge" />
 </p>
@@ -34,7 +34,7 @@ A modern, high-performance personal portfolio showcasing my skills, projects, an
 
 ## 🌟 Overview
 
-This repository contains the source code for my personal **portfolio website**, built to be:
+### This repository contains the source code for my personal **portfolio website**, built to be:
 
 - ⚡ **High-performance** — Next.js optimizations (image optimization, static generation, SSR where needed)  
 - 📱 **Fully responsive** — Tailwind CSS utility-first design for all screen sizes  
@@ -68,7 +68,7 @@ This repository contains the source code for my personal **portfolio website**, 
 
 ## 💻 Getting Started
 
-Follow these steps to run the project locally.
+### Follow these steps to run the project locally.
 
 ### ✅ Prerequisites
 
@@ -95,7 +95,7 @@ pnpm install
 # or
 bun install
 ```
-###  ▶️ Run the Development Server
+####  ▶️ Run the Development Server
 ```bash
 npm run dev
 # or
@@ -106,8 +106,9 @@ pnpm dev
 bun dev
 
 ```
-### Your app will be available at:
+#### Your app will be available at:
 👉 http://localhost:3000
+
 ```bash
 📁 Project Structure
 app/         → App Router pages, layouts, and route segments
@@ -116,26 +117,30 @@ public/      → Static assets (images, icons, fonts)
 styles/      → Global styles & Tailwind configuration
 lib/         → Utility helpers or modules (optional)
 ```
-### ☁️ Deployment
 
-This portfolio is deployed on Vercel, offering:
+## ☁️ Deployment
 
-- Automatic builds
-- CDN-level performance
-- Zero-config deployment
-- Deploy your own:
+#### This portfolio is deployed on Vercel, offering:
+ - Optimal performance
+ - Automatic scalability
+ - Zero-configuration deployment
+
+#### You can deploy your own instance easily via Vercel.
 - Push your repo to GitHub
 - Open https://vercel.com
-- mport your repository
+- Import your repository
 - Deploy with one click
 
-### 📚 Resources
+---
 
- - Next.js Docs → https://nextjs.org/docs
- - Tailwind CSS Docs → https://tailwindcss.com/docs
- - Learn Next.js → https://nextjs.org/learn
 
-### ✉️ Contact
+## 📚 Learn More
+Useful links to explore the technologies used:
+ - Next.js Documentation → https://nextjs.org/docs
+ - Tailwind CSS Documentation → https://tailwindcss.com/docs
+ - Learn Next.js (Interactive Guide) → https://nextjs.org/learn
+
+## ✉️ Contact
 
 - Add your preferred contact methods:
 - Email: hasibjaan@gmail.com
@@ -143,7 +148,7 @@ This portfolio is deployed on Vercel, offering:
 - Portfolio URL: [Portfolio](https://portfolio-site-self-omega.vercel.app/)
 
   
-### 📝 License
+## 📝 License
 
 This project is licensed under the MIT License.
 See the LICENSE.md file for details.
