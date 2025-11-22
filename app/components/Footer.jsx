@@ -43,7 +43,7 @@ export default function Footer() {
                 <div className="p-1.5 rounded-full backdrop-blur-xl bg-white/10 border border-purple-500/20">
                   <Mail size={14} />
                 </div>
-                <span>hello@johndoe.com</span>
+                <span>{portfolioConfig.email}</span>
               </a>
               
               <a 
@@ -53,14 +53,14 @@ export default function Footer() {
                 <div className="p-1.5 rounded-full backdrop-blur-xl bg-white/10 border border-purple-500/20">
                   <Phone size={14} />
                 </div>
-                <span>+1 (234) 567-890</span>
+                <span>{portfolioConfig.phone}</span>
               </a>
               
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
                 <div className="p-1.5 rounded-full backdrop-blur-xl bg-white/10 border border-purple-500/20">
                   <MapPin size={14} />
                 </div>
-                <span>San Francisco, CA</span>
+                <span>{portfolioConfig.location}</span>
               </div>
             </div>
 
